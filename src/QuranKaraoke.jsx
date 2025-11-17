@@ -373,6 +373,7 @@ export default function QuranKaraoke() {
           style={{
             textAlign: "center",
             marginBottom: 4,
+            marginTop: 0,
             fontSize: "2.7rem",
           }}
         >
