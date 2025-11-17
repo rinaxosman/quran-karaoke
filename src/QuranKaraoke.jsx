@@ -385,91 +385,83 @@ export default function QuranKaraoke() {
         }}
       >
         {/* TOP BAR: title + subtitle on left, reciter on right */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-end",
-            gap: 16,
-            marginBottom: 12,
-          }}
-        >
-          {/* Title + subtitle */}
-          <div>
-            <h1
-              style={{
-                margin: 0,
-                fontSize: "2.4rem",
-              }}
-            >
-              Tajwīd Practice
-            </h1>
-            <p
-              style={{
-                marginTop: 4,
-                marginBottom: 0,
-                fontSize: 13,
-                opacity: 0.8,
-              }}
-            >
-              Learn, recite, and understand the Qur’an ayah by ayah.
-            </p>
-          </div>
+{/* TOP BAR */}
+<div
+  style={{
+    display: "flex",
+    justifyContent: isMobile ? "center" : "space-between",
+    alignItems: isMobile ? "center" : "flex-end",
+    flexDirection: isMobile ? "column" : "row",
+    textAlign: isMobile ? "center" : "left",
+    gap: 12,
+    marginBottom: 12,
+  }}
+>
+  {/* Title + subtitle */}
+  <div>
+    <h1
+      style={{
+        margin: 0,
+        fontSize: "2.4rem",
+        whiteSpace: "nowrap", // <-- forces single line
+      }}
+    >
+      Tajwīd Practice
+    </h1>
+    <p
+      style={{
+        marginTop: 4,
+        marginBottom: 0,
+        fontSize: 13,
+        opacity: 0.8,
+      }}
+    >
+      Learn, recite, and understand the Qur’an ayah by ayah.
+    </p>
+  </div>
 
-          {/* Reciter selector */}
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-end",
-              gap: 4,
-              fontSize: 12,
-            }}
-          >
-            <span style={{ opacity: 0.7 }}>Reciter</span>
-            <select
-              value={reciter}
-              onChange={(e) => setReciter(e.target.value)}
-              style={{
-                padding: "6px 14px",
-                fontSize: 13,
-                borderRadius: 9999,
-                border: "1px solid #3b3b3b",
-                background: "#111",
-                color: "#fff",
-                outline: "none",
-                cursor: "pointer",
-                boxShadow: "0 3px 8px rgba(0,0,0,0.35)",
-                appearance: "none",
-                WebkitAppearance: "none",
-                MozAppearance: "none",
-                backgroundImage:
-                  "linear-gradient(45deg, transparent 50%, #fff 50%), linear-gradient(135deg, #fff 50%, transparent 50%)",
-                backgroundPosition:
-                  "calc(100% - 14px) 50%, calc(100% - 9px) 50%",
-                backgroundSize: "6px 6px, 6px 6px",
-                backgroundRepeat: "no-repeat",
-                paddingRight: 28,
-              }}
-            >
-              <option value="1" style={reciterOptionStyle}>
-                Mishary Al-Afasy
-              </option>
-              <option value="2" style={reciterOptionStyle}>
-                Abu Bakr Al Shatri
-              </option>
-              <option value="3" style={reciterOptionStyle}>
-                Nasser Al Qatami
-              </option>
-              <option value="4" style={reciterOptionStyle}>
-                Yasser Al-Dosari
-              </option>
-              <option value="5" style={reciterOptionStyle}>
-                Hani Ar Rifai
-              </option>
-            </select>
-          </div>
-        </div>
+  {/* Reciter selector */}
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: isMobile ? "center" : "flex-end",
+      gap: 4,
+      fontSize: 12,
+      marginTop: isMobile ? 6 : 0,
+    }}
+  >
+    <span style={{ opacity: 0.7 }}>Reciter</span>
+    <select
+      value={reciter}
+      onChange={(e) => setReciter(e.target.value)}
+      style={{
+        padding: "6px 14px",
+        fontSize: 13,
+        borderRadius: 9999,
+        border: "1px solid #3b3b3b",
+        background: "#111",
+        color: "#fff",
+        boxShadow: "0 3px 8px rgba(0,0,0,0.35)",
+        appearance: "none",
+        backgroundImage:
+          "linear-gradient(45deg, transparent 50%, #fff 50%), linear-gradient(135deg, #fff 50%, transparent 50%)",
+        backgroundPosition:
+          "calc(100% - 14px) 50%, calc(100% - 9px) 50%",
+        backgroundSize: "6px 6px, 6px 6px",
+        backgroundRepeat: "no-repeat",
+        paddingRight: 28,
+      }}
+    >
+      <option value="1" style={reciterOptionStyle}>Mishary Al-Afasy</option>
+      <option value="2" style={reciterOptionStyle}>Abu Bakr Al Shatri</option>
+      <option value="3" style={reciterOptionStyle}>Nasser Al Qatami</option>
+      <option value="4" style={reciterOptionStyle}>Yasser Al-Dosari</option>
+      <option value="5" style={reciterOptionStyle}>Hani Ar Rifai</option>
+    </select>
+  </div>
+</div>
+
 
         {/* SURAH NAV BAR */}
         <div
@@ -593,7 +585,7 @@ export default function QuranKaraoke() {
                 <div
                   style={{ display: "flex", alignItems: "center", gap: 8 }}
                 >
-                  <span style={{ fontSize: 12, opacity: 0.7 }}>Mode</span>
+                  <span style={{ fontSize: 13, opacity: 0.7 }}>Mode</span>
 
                   <button
                     onClick={() => setMode("learning")}
