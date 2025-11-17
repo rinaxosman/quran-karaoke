@@ -228,7 +228,7 @@ export default function QuranKaraoke() {
     setIsUserTurn(false);
 
     audio.src = ayah.audioUrl;
-    audio.play().catch(() => {});
+    audio.play().catch(() => { });
   }
 
   function handleAudioEnded() {
@@ -273,7 +273,7 @@ export default function QuranKaraoke() {
     setCurrentAyahIndex(0);
 
     audio.src = selectedSurah.fullAudioUrl;
-    audio.play().catch(() => {});
+    audio.play().catch(() => { });
   }
 
   // Practice mode: start from ayah 0
@@ -350,109 +350,109 @@ export default function QuranKaraoke() {
     );
   }
 
-return (
-  <div
-    style={{
-      minHeight: "100vh",
-      background: "#242424",
-      color: "#fff",
-      padding: "40px 16px",
-      boxSizing: "border-box",
-    }}
-  >
+  return (
     <div
       style={{
-        maxWidth: 640,
-        margin: "0 auto",
-        padding: 24,
-        fontFamily: "system-ui, sans-serif",
+        minHeight: "100vh",
+        background: "#242424",
+        color: "#fff",
+        padding: "40px 16px",
+        boxSizing: "border-box",
       }}
     >
-      {/* TOP BAR: title + subtitle on left, reciter on right */}
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "flex-end",
-          gap: 16,
-          marginBottom: 12,
+          maxWidth: 640,
+          margin: "0 auto",
+          padding: 24,
+          fontFamily: "system-ui, sans-serif",
         }}
       >
-        {/* Title + subtitle */}
-        <div>
-          <h1
-            style={{
-              margin: 0,
-              fontSize: "2.4rem",
-            }}
-          >
-            Tajwīd Practice
-          </h1>
-          <p
-            style={{
-              marginTop: 4,
-              marginBottom: 0,
-              fontSize: 13,
-              opacity: 0.8,
-            }}
-          >
-            Learn, recite, and understand the Qur’an ayah by ayah.
-          </p>
-        </div>
-
-        {/* Reciter selector */}
+        {/* TOP BAR: title + subtitle on left, reciter on right */}
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
+            justifyContent: "space-between",
             alignItems: "flex-end",
-            gap: 4,
-            fontSize: 12,
+            gap: 16,
+            marginBottom: 12,
           }}
         >
-          <span style={{ opacity: 0.7 }}>Reciter</span>
-          <select
-            value={reciter}
-            onChange={(e) => setReciter(e.target.value)}
+          {/* Title + subtitle */}
+          <div>
+            <h1
+              style={{
+                margin: 0,
+                fontSize: "2.4rem",
+              }}
+            >
+              Tajwīd Practice
+            </h1>
+            <p
+              style={{
+                marginTop: 4,
+                marginBottom: 0,
+                fontSize: 13,
+                opacity: 0.8,
+              }}
+            >
+              Learn, recite, and understand the Qur’an ayah by ayah.
+            </p>
+          </div>
+
+          {/* Reciter selector */}
+          <div
             style={{
-              padding: "6px 14px",
-              fontSize: 13,
-              borderRadius: 9999,
-              border: "1px solid #3b3b3b",
-              background: "#111",
-              color: "#fff",
-              outline: "none",
-              cursor: "pointer",
-              boxShadow: "0 3px 8px rgba(0,0,0,0.35)",
-              appearance: "none",
-              WebkitAppearance: "none",
-              MozAppearance: "none",
-              backgroundImage:
-                "linear-gradient(45deg, transparent 50%, #fff 50%), linear-gradient(135deg, #fff 50%, transparent 50%)",
-              backgroundPosition: "calc(100% - 14px) 50%, calc(100% - 9px) 50%",
-              backgroundSize: "6px 6px, 6px 6px",
-              backgroundRepeat: "no-repeat",
-              paddingRight: 28,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+              gap: 4,
+              fontSize: 12,
             }}
           >
-            <option value="1" style={reciterOptionStyle}>
-              Mishary Al-Afasy
-            </option>
-            <option value="2" style={reciterOptionStyle}>
-              Abu Bakr Al Shatri
-            </option>
-            <option value="3" style={reciterOptionStyle}>
-              Nasser Al Qatami
-            </option>
-            <option value="4" style={reciterOptionStyle}>
-              Yasser Al-Dosari
-            </option>
-            <option value="5" style={reciterOptionStyle}>
-              Hani Ar Rifai
-            </option>
-          </select>
+            <span style={{ opacity: 0.7 }}>Reciter</span>
+            <select
+              value={reciter}
+              onChange={(e) => setReciter(e.target.value)}
+              style={{
+                padding: "6px 14px",
+                fontSize: 13,
+                borderRadius: 9999,
+                border: "1px solid #3b3b3b",
+                background: "#111",
+                color: "#fff",
+                outline: "none",
+                cursor: "pointer",
+                boxShadow: "0 3px 8px rgba(0,0,0,0.35)",
+                appearance: "none",
+                WebkitAppearance: "none",
+                MozAppearance: "none",
+                backgroundImage:
+                  "linear-gradient(45deg, transparent 50%, #fff 50%), linear-gradient(135deg, #fff 50%, transparent 50%)",
+                backgroundPosition: "calc(100% - 14px) 50%, calc(100% - 9px) 50%",
+                backgroundSize: "6px 6px, 6px 6px",
+                backgroundRepeat: "no-repeat",
+                paddingRight: 28,
+              }}
+            >
+              <option value="1" style={reciterOptionStyle}>
+                Mishary Al-Afasy
+              </option>
+              <option value="2" style={reciterOptionStyle}>
+                Abu Bakr Al Shatri
+              </option>
+              <option value="3" style={reciterOptionStyle}>
+                Nasser Al Qatami
+              </option>
+              <option value="4" style={reciterOptionStyle}>
+                Yasser Al-Dosari
+              </option>
+              <option value="5" style={reciterOptionStyle}>
+                Hani Ar Rifai
+              </option>
+            </select>
+          </div>
         </div>
-      </div>
 
 
         {/* SURAH NAV BAR */}
@@ -490,8 +490,8 @@ return (
             <div
               style={{
                 marginTop: 2,
-                fontSize: 11,
-                opacity: 0.6,
+                fontSize: 12,
+                opacity: 1,
                 color: "#5574e4ff",
               }}
             >
@@ -553,61 +553,84 @@ return (
         )}
 
         {/* CONTROLS CARD */}
+        {/* CONTROLS CARD */}
         <div
           style={{
             marginTop: 20,
-            padding: 12,
+            padding: 16,
             borderRadius: 10,
             background: "#151515",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
-            gap: 10,
+            gap: 8,
           }}
         >
-          {/* Mode toggle */}
-          <div style={{ display: "flex", gap: 8 }}>
-            <button
-              onClick={() => setMode("learning")}
-              disabled={mode === "learning"}
-            >
-              Learning Mode
-            </button>
-            <button
-              onClick={() => setMode("practice")}
-              disabled={mode === "practice"}
-            >
-              Practice Mode
-            </button>
+          {/* Top row: mode toggle (left) + transport controls (right) */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: 16,
+            }}
+          >
+            {/* Mode toggle */}
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontSize: 12, opacity: 0.7 }}>Mode</span>
 
-            <ModeInfoIcon />
+              <button
+                onClick={() => setMode("learning")}
+                disabled={mode === "learning"}
+              >
+                Learning
+              </button>
+
+              <button
+                onClick={() => setMode("practice")}
+                disabled={mode === "practice"}
+              >
+                Practice
+              </button>
+
+              <ModeInfoIcon />
+            </div>
+
+            {/* Transport controls */}
+            <div style={{ display: "flex", gap: 8 }}>
+              {mode === "learning" && (
+                <>
+                  <button onClick={startLearning}>▶ Play surah</button>
+                  <button onClick={pauseAudio}>⏸ Pause</button>
+                </>
+              )}
+
+              {mode === "practice" && (
+                <>
+                  <button onClick={startPractice}>▶ Play ayah</button>
+                  {isUserTurn && (
+                    <button onClick={nextAyahPractice}>Next ayah →</button>
+                  )}
+                </>
+              )}
+            </div>
           </div>
 
-          {/* Play controls (depend on mode) */}
-          <div style={{ display: "flex", gap: 8 }}>
-            {mode === "learning" && (
-              <>
-                <button onClick={startLearning}>Play Surah</button>
-                <button onClick={pauseAudio}>Pause</button>
-              </>
-            )}
-
-            {mode === "practice" && (
-              <>
-                <button onClick={startPractice}>Start Practice</button>
-                {isUserTurn && (
-                  <button onClick={nextAyahPractice}>Next Ayah</button>
-                )}
-              </>
-            )}
-          </div>
-
-          {mode === "practice" && isUserTurn && (
-            <p style={{ margin: 0, fontSize: 13, opacity: 0.85 }}>
-              Your turn: recite this ayah, then press &quot;Next Ayah&quot;.
+          {/* Helper text for practice mode */}
+          {mode === "practice" && (
+            <p
+              style={{
+                margin: 0,
+                marginTop: 4,
+                fontSize: 12,
+                opacity: 0.8,
+              }}
+            >
+              In practice mode, one ayah plays at a time. Recite it, then press{" "}
+              <strong>Next ayah</strong>.
             </p>
           )}
         </div>
+
 
         {/* AUDIO ELEMENT */}
         <audio
@@ -651,13 +674,13 @@ return (
                   background: isCurrent
                     ? "#24315f"
                     : hoveredAyahIndex === idx
-                    ? "#202637"
-                    : "transparent",
+                      ? "#202637"
+                      : "transparent",
                   border: isCurrent
                     ? "1px solid #3f5bff"
                     : hoveredAyahIndex === idx
-                    ? "1px solid #333a55"
-                    : "1px solid transparent",
+                      ? "1px solid #333a55"
+                      : "1px solid transparent",
                   textAlign: "right",
                   transition:
                     "background 0.15s ease, border-color 0.15s ease, transform 0.1s ease",
