@@ -134,7 +134,7 @@ export default function QuranKaraoke() {
     async function load() {
       try {
         setLoading(true);
-        setError(null);
+               setError(null);
 
         const data = await fetchSelectedSurahs(reciter);
         setSurahs(data);
@@ -228,7 +228,7 @@ export default function QuranKaraoke() {
     setIsUserTurn(false);
 
     audio.src = ayah.audioUrl;
-    audio.play().catch(() => { });
+    audio.play().catch(() => {});
   }
 
   function handleAudioEnded() {
@@ -273,7 +273,7 @@ export default function QuranKaraoke() {
     setCurrentAyahIndex(0);
 
     audio.src = selectedSurah.fullAudioUrl;
-    audio.play().catch(() => { });
+    audio.play().catch(() => {});
   }
 
   // Practice mode: start from ayah 0
@@ -376,6 +376,7 @@ export default function QuranKaraoke() {
             alignItems: "flex-end",
             gap: 16,
             marginBottom: 12,
+            flexWrap: "wrap", // allow wrap on small screens
           }}
         >
           {/* Title + subtitle */}
@@ -429,7 +430,8 @@ export default function QuranKaraoke() {
                 MozAppearance: "none",
                 backgroundImage:
                   "linear-gradient(45deg, transparent 50%, #fff 50%), linear-gradient(135deg, #fff 50%, transparent 50%)",
-                backgroundPosition: "calc(100% - 14px) 50%, calc(100% - 9px) 50%",
+                backgroundPosition:
+                  "calc(100% - 14px) 50%, calc(100% - 9px) 50%",
                 backgroundSize: "6px 6px, 6px 6px",
                 backgroundRepeat: "no-repeat",
                 paddingRight: 28,
@@ -453,7 +455,6 @@ export default function QuranKaraoke() {
             </select>
           </div>
         </div>
-
 
         {/* SURAH NAV BAR */}
         <div
@@ -553,7 +554,6 @@ export default function QuranKaraoke() {
         )}
 
         {/* CONTROLS CARD */}
-        {/* CONTROLS CARD */}
         <div
           style={{
             marginTop: 20,
@@ -572,6 +572,7 @@ export default function QuranKaraoke() {
               justifyContent: "space-between",
               alignItems: "center",
               gap: 16,
+              flexWrap: "wrap", // wrap on small screens
             }}
           >
             {/* Mode toggle */}
@@ -596,7 +597,7 @@ export default function QuranKaraoke() {
             </div>
 
             {/* Transport controls */}
-            <div style={{ display: "flex", gap: 8 }}>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {mode === "learning" && (
                 <>
                   <button onClick={startLearning}>▶ Play surah</button>
@@ -630,7 +631,6 @@ export default function QuranKaraoke() {
             </p>
           )}
         </div>
-
 
         {/* AUDIO ELEMENT */}
         <audio
@@ -674,13 +674,13 @@ export default function QuranKaraoke() {
                   background: isCurrent
                     ? "#24315f"
                     : hoveredAyahIndex === idx
-                      ? "#202637"
-                      : "transparent",
+                    ? "#202637"
+                    : "transparent",
                   border: isCurrent
                     ? "1px solid #3f5bff"
                     : hoveredAyahIndex === idx
-                      ? "1px solid #333a55"
-                      : "1px solid transparent",
+                    ? "1px solid #333a55"
+                    : "1px solid transparent",
                   textAlign: "right",
                   transition:
                     "background 0.15s ease, border-color 0.15s ease, transform 0.1s ease",
