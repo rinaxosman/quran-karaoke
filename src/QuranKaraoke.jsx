@@ -350,58 +350,67 @@ export default function QuranKaraoke() {
     );
   }
 
-  return (
+return (
+  <div
+    style={{
+      minHeight: "100vh",
+      background: "#242424",
+      color: "#fff",
+      padding: "40px 16px",
+      boxSizing: "border-box",
+    }}
+  >
     <div
       style={{
-        minHeight: "100vh",
-        background: "#242424",
-        color: "#fff",
-        padding: "40px 16px",
-        boxSizing: "border-box",
+        maxWidth: 640,
+        margin: "0 auto",
+        padding: 24,
+        fontFamily: "system-ui, sans-serif",
       }}
     >
+      {/* TOP BAR: title + subtitle on left, reciter on right */}
       <div
         style={{
-          maxWidth: 640,
-          margin: "0 auto",
-          padding: 24,
-          fontFamily: "system-ui, sans-serif",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-end",
+          gap: 16,
+          marginBottom: 12,
         }}
       >
-        {/* HEADER */}
-        <h1
-          style={{
-            textAlign: "center",
-            marginBottom: 4,
-            marginTop: 0,
-            fontSize: "2.7rem",
-          }}
-        >
-          Tajwīd Practice
-        </h1>
-        <p
-          style={{
-            textAlign: "center",
-            marginTop: 0,
-            fontSize: 14,
-            opacity: 0.8,
-          }}
-        >
-          Learn, recite, and understand the Qur’an ayah by ayah.
-        </p>
+        {/* Title + subtitle */}
+        <div>
+          <h1
+            style={{
+              margin: 0,
+              fontSize: "2.4rem",
+            }}
+          >
+            Tajwīd Practice
+          </h1>
+          <p
+            style={{
+              marginTop: 4,
+              marginBottom: 0,
+              fontSize: 13,
+              opacity: 0.8,
+            }}
+          >
+            Learn, recite, and understand the Qur’an ayah by ayah.
+          </p>
+        </div>
 
-        {/* RECITER ROW */}
+        {/* Reciter selector */}
         <div
           style={{
-            marginTop: 12,
             display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: 8,
-            fontSize: 14,
+            flexDirection: "column",
+            alignItems: "flex-end",
+            gap: 4,
+            fontSize: 12,
           }}
         >
-          <span style={{ opacity: 0.85 }}>Reciter:</span>
+          <span style={{ opacity: 0.7 }}>Reciter</span>
           <select
             value={reciter}
             onChange={(e) => setReciter(e.target.value)}
@@ -443,6 +452,8 @@ export default function QuranKaraoke() {
             </option>
           </select>
         </div>
+      </div>
+
 
         {/* SURAH NAV BAR */}
         <div
